@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="local-token" content="__LOCAL_TOKEN__">
+  <title>整数平衡化 · 把数字写成等式</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">=</span><span>整数平衡化</span></div>
+      <span class="local-badge"><span class="dot"></span>本机运行</span>
+    </header>
+
+    <section class="hero" aria-labelledby="title">
+      <p class="eyebrow">把熟悉的数字，变成成立的等式</p>
+      <h1 id="title">一个整数，<br><em>能写出多少种等式？</em></h1>
+      <p class="intro">保持数字和顺序不变，只插入 + − × ÷、括号与等号。输入一个整数，查看是否可行，并寻找不同的写法。</p>
+    </section>
+
+    <div class="workspace">
+      <section class="panel input-panel" aria-labelledby="input-title">
+        <div class="panel-head"><span class="step">01</span><h2 id="input-title">输入整数</h2></div>
+        <form id="balance-form" novalidate>
+          <label class="field-label" for="number">十进制整数</label>
+          <input id="number" name="number" type="text" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="256" placeholder="例如 1919810" aria-describedby="number-hint" required>
+          <p id="number-hint" class="field-hint">最多 256 位；数字顺序会完整保留。</p>
+
+          <div class="option-group">
+            <span class="field-label">等号数量</span>
+            <div class="segmented" role="group" aria-label="等号数量">
+              <label><input type="radio" name="equals" value="single" checked><span>恰好一个</span></label>
+              <label><input type="radio" name="equals" value="multiple"><span>允许多个</span></label>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <label class="field-label" for="mode">运算规则</label>
+            <select id="mode" name="mode">
+              <option value="segment">默认：段首可带负号</option>
+              <option value="strict">严格：不使用前导负号</option>
+            </select>
+          </div>
+
+          <div class="option-group">
+            <label class="field-label" for="target">希望找到的方案数</label>
+            <div class="count-row"><input id="target" name="target" type="number" min="1" max="20" value="5"><span>条以内 · 实际结果可能更少</span></div>
+          </div>
+
+          <button class="primary-button" id="submit" type="submit">判断并生成方案 <span aria-hidden="true">↗</span></button>
+          <p id="form-error" class="form-error" role="alert" hidden></p>
+        </form>
+        <div class="examples"><span>试试看</span><button type="button" data-example="1234">1234</button><button type="button" data-example="222">222</button><button type="button" data-example="9989858">9989858</button><button type="button" data-example="1919810">1919810</button></div>
+      </section>
+
+      <section class="panel result-panel" aria-labelledby="result-title">
+        <div class="panel-head"><span class="step">02</span><h2 id="result-title">计算结果</h2></div>
+        <div id="empty-state" class="empty-state">
+          <div class="empty-symbol" aria-hidden="true"><span>12</span><b>=</b><span>3 × 4</span></div>
+          <h3>等式从这里开始</h3>
+          <p>输入数字后，已验证的方案会逐条出现在这里。</p>
+        </div>
+        <div id="result-content" hidden>
+          <div class="status-card">
+            <div class="status-top"><span id="status-icon" class="status-icon" aria-hidden="true">✓</span><span id="status-text" class="status-text"></span></div>
+            <p id="status-detail"></p>
+            <div class="basis-line">判定依据 <strong id="basis"></strong></div>
+          </div>
+          <div class="results-head"><h3>平衡化方案 <span id="solution-count">0</span></h3><span id="elapsed"></span></div>
+          <ol id="solutions" class="solutions"></ol>
+          <p id="no-solutions" class="no-solutions" hidden></p>
+          <div class="result-actions"><button id="cancel" type="button" class="quiet-button" hidden>取消搜索</button><button id="retry" type="button" class="quiet-button" hidden>延长时间搜索</button></div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p>以硅基－沉默整数平衡化定理的开源数据为依据，所有展示的等式均经精确分数验证。</p>
+      <a href="https://github.com/guijixzh/Silicon-Silence-s-Balance-Integer-Theorem-Proof-and-Verification-Program" target="_blank" rel="noopener noreferrer">查看原项目 ↗</a>
+    </footer>
+  </main>
+</body>
+</html>
