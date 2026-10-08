@@ -22,6 +22,9 @@
 
 来源与许可
 ----------
+特别感谢我的朋友 guijixzh（硅基飙尘葆光）提出并公开整数平衡化定理相关成果，
+并分享证明、验证代码与数据，使本工具得以建立。作者主页：https://github.com/guijixzh
+
 原项目：
 https://github.com/guijixzh/Silicon-Silence-s-Balance-Integer-Theorem-Proof-and-Verification-Program
 使用固定提交 5d849da7f78e21affb2999257edfd71a7676baf3 的源码和数据。

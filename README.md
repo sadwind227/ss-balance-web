@@ -1,5 +1,7 @@
 # 整数平衡化工具
 
+[中文](README.md) | [English](README_EN.md)
+
 面向使用者的纯文本说明见 [README.txt](README.txt)。已打包的 Windows 64 位程序将在 [GitHub Releases](https://github.com/sadwind227/ss-balance-web/releases) 页面提供：完整解压后双击文件夹内的 `整数平衡化.exe`，无需安装 Python。构建记录见 [打包记录](docs/06-打包记录.md)。
 
 这是一个在本机浏览器使用的整数平衡化程序。输入十进制整数后，它会判断能否在原有数字串中插入 `+ - * /`、括号和等号，生成正确的等式。数字及其顺序不会改变；每条展示的等式都会经过独立的精确分数验证。
@@ -56,5 +58,7 @@ python vendor/upstream/verify_results.py
 ## 上游来源和许可
 
 [Silicon-Silence-s-Balance-Integer-Theorem-Proof-and-Verification-Program](https://github.com/guijixzh/Silicon-Silence-s-Balance-Integer-Theorem-Proof-and-Verification-Program)，固定提交 `5d849da7f78e21affb2999257edfd71a7676baf3`。来源与本地数据校验细节见 [实现与验证记录](docs/05-实现与验证.md)。上游代码和数据按其 [MIT 许可](vendor/upstream/LICENSE)保留。
+
+特别感谢我的朋友 [guijixzh（硅基飙尘葆光）](https://github.com/guijixzh)：整数平衡化定理、证明与公开的验证代码和数据为本应用提供了基础。感谢他分享这项成果并允许大家在上游许可范围内继续学习和应用。
 
 原工程规划文档：[需求规格](docs/01-需求规格.md)、[技术设计](docs/02-技术设计.md)、[开发计划](docs/03-开发计划.md)、[决策与来源](docs/04-决策与来源.md)。
